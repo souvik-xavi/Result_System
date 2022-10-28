@@ -2,8 +2,8 @@
 include  "../connection.php";
 session_start();
 if(isset($_SESSION['email'])){
-
-$query ="SELECT * FROM marks1";
+$id=$_SESSION['id'];
+$query ="SELECT * FROM marks1 where stud_id= $id";
 $sql = mysqli_query($connection,$query);
 if(!$sql){
     echo "Something went wrong". mysqli_connect($connection);
@@ -59,8 +59,6 @@ if(isset($_GET['delete'])){
                     <td><?php echo ($row['maths']) ?></td>
                     <td><?php echo ($row['chem']) ?></td>
                     <td><?php echo ($row['phy'])?> </td>
-                    <td><a href="edit.php?edit=<?php echo $row['id']?>">Edit</a> </td>
-                    <td><a href="view.php?delete=<?php echo $row['id']?>">Delete</a> </td>
                 </tr>
                 <?php
 

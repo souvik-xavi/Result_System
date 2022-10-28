@@ -1,11 +1,13 @@
 <?php 
 include "../connection.php";
-
+$id=$_GET['add'];
+$query1= "SELECT users from users WHERE id=$id";
+$res= mysqli_query($connection,$query1);
+$row=mysqli_fetch_assoc($res);
 
  if(isset($_POST["submit"]))
  {
-    $id=$_GET["add"];
-  $name= $_POST["name"];
+  $name=$row["users"] ;
   $math=$_POST["math"];
   $chem=$_POST['chem'];
   $phy=$_POST["phy"];
@@ -55,9 +57,9 @@ include "../connection.php";
 
                 <form class="forms-sample">
                     <div class="form-group row">
-                        <label for="name" class="col-sm-3 col-form-label">Name</label>
+                        <label for="name"  class="col-sm-3 col-form-label">Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"name="name"  placeholder="name">
+                            <input type="text" class="form-control" name="name" value="<?php echo $row['users'] ?>"  disabled>
                         </div>
                     </div>
                     <div class="form-group row">
