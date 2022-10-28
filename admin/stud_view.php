@@ -1,6 +1,7 @@
 <?php
 include  "../connection.php";
 session_start();
+echo $_SESSION['position'];
 if(isset($_SESSION['email'])){
 $id=$_SESSION['id'];
 $query ="SELECT * FROM marks1 where stud_id= $id";

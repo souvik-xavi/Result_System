@@ -9,9 +9,9 @@ $password= $_POST["password"];
 $ConfirmPassword=$_POST['ConfirmPassword'];
 if($password===$ConfirmPassword)
 {
-
+$password_hash=password_hash($password, PASSWORD_DEFAULT);
 $query ="INSERT INTO users ( users, email, password, position) 
-    VALUES ('$name', '$email', '$password', '$position')";
+    VALUES ('$name', '$email', '$password_hash', '$position')";
 
 $sql = mysqli_query($connection,$query);
 

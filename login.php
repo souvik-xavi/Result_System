@@ -19,7 +19,9 @@ if(!$sql){
     if(mysqli_num_rows($sql)==0)
     {echo "<p style= 'color :white'>"." went Wrong.</p>";}
     else{
-        if($password===$row['password']) 
+        $verify = password_verify($password,$row['password']);
+
+        if($verify) 
     { 
          session_start();
          $_SESSION['email']= $row['email'];
