@@ -46,7 +46,7 @@ if(isset($_GET['delete'])){
                 <th><h1>possword</h1></th>
                 <th><h1>position</th>
                 <th></th>
-                <th><h1><a class="btn btn-primary" href="logout.php">Logout</a></h1></th>
+                <th><h1><a class="btn btn-primary" href="../logout.php">Logout</a></h1></th>
             </thead>
             <tbody>
                 <?php 

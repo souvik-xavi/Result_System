@@ -28,6 +28,7 @@ if(!$sql){
          $_SESSION['name']=$row['users'];
          $_SESSION['position']=$row['position'];
          $_SESSION['id']=$row['id'];
+         header("Location:admin/index.php");
     }
     else{
         echo "<p style= 'color :white'>.Password didnt match.</p>";
